@@ -1,0 +1,29 @@
+using Unity.VisualScripting;
+using UnityEditor;
+using UnityEngine;
+
+public class CubeGenerator : MonoBehaviour
+{
+    public GameObject cubeprefab;
+    public int totalCubes = 10;
+    public float cubeSpacing = 1.0f;
+
+
+    void Start()
+    {
+        
+    }
+
+    // Update is called once per frame
+    public void GenCube()
+    {
+        Vector3 myPosition = transform.position;
+        GameObject firstCube = Instantiate(cubeprefab, myPosition, Quaternion.identity);
+
+        for(int i = 1; i < totalCubes; i++)
+        {
+            Vector3 position = new Vector3(myPosition.x, myPosition.y, myPosition.z + (i * cubeSpacing));
+            Instantiate(cubeprefab, position, Quaternion.identity);
+        }
+    }
+}

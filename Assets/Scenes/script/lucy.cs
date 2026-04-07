@@ -23,7 +23,7 @@ public class lucy : MonoBehaviour
             health = health - 20;
         }
 
-        if (Input.GetKeyDown(Keycode.Space))
+        if (Input.GetKeyDown(Keycode.space))
         {
             health = health + 2;
         }
