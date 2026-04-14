@@ -16,7 +16,7 @@ public class Spawner : MonoBehaviour
     private int coinSpawnChance;
 
     [Header("동전 스폰 확률 설정")]
-    [Range(0, 100)]
+    [UnityEngine.Range(0, 100)]
     public int coinspawnchance = 50;
 
 
@@ -59,7 +59,7 @@ public class Spawner : MonoBehaviour
 
         int randomValue = Random.Range(0, 100);
             
-        if(randomValue < coinSpawnChance)
+        if(randomValue < coinspawnchance
         {
             Instantiate(coinPrefabs, spawnTransform.position, spawnTransform.rotation);
         }
