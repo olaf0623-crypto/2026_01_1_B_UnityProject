@@ -14,9 +14,34 @@ public class FruitGame : MonoBehaviour
     public bool isGameOver = false;
     public Camera mainCamera;
 
+    public float fruitTimer;
+
+    
+
+
+
+
+
+    void Start()
+    {
+        mainCamera = Camera.main;
+        SpawnNewFruit();
+    }
+    
     void Update()
     {
         if (isGameOver) return;
+
+        if (fruitTimer >= 0)
+        {
+            fruitTimer -= Time.deltaTime;
+        }
+
+        if (fruitTimer < 0 && fruitTimer > -2)
+        {
+            SpawnNewFruit();
+            fruitTimer = -3.0f;
+        }
         if (currentFruit != null)
         {
             Vector3 mousePosition = Input.mousePosition;
@@ -38,6 +63,11 @@ public class FruitGame : MonoBehaviour
             }
 
             currentFruit.transform.position = newPosition;
+        }
+
+        if (Input.GetMouseButtonDown(0) && fruitTimer == -3.0f)
+        {
+            DropFruit();
         }
     }
 
@@ -66,6 +96,16 @@ public class FruitGame : MonoBehaviour
                 rb.gravityScale = 0f;
             }
 
+        }
+    }
+
+
+    public void MergeFruits(int fruitType, Vector3 position)
+    {
+        if (fruitType < fruitPrefabs.Length - 1)
+        {
+            GameObject newFruit = Instantiate(fruitPrefabs[fruitType + 1], position, Quaternion.identity);
+            newFruit.transform.localScale = new Vector3(fruitSizes[fruitType + 1], fruitSizes[fruitType + 1], 1.0f);
         }
     }
 }
