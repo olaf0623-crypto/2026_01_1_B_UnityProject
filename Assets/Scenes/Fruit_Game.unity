@@ -393,6 +393,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1127730155}
   - component: {fileID: 1127730154}
+  - component: {fileID: 1127730157}
   - component: {fileID: 1127730153}
   - component: {fileID: 1127730156}
   m_Layer: 0
@@ -539,6 +540,34 @@ Rigidbody2D:
   m_SleepingMode: 1
   m_CollisionDetection: 1
   m_Constraints: 0
+--- !u!114 &1127730157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1127730152}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e83804f71a0b9e47b828f6857fc4838, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::FruitGame
+  fruitPrefabs: []
+  fruitSizes:
+  - 0.5
+  - 0.7
+  - 0.9
+  - 1.1
+  - 1.3
+  - 1.5
+  - 1.7
+  - 1.9
+  currentFruit: {fileID: 0}
+  currentFruitType: 0
+  fruitStartHeight: 6
+  gameWidth: 5
+  isGameOver: 0
+  mainCamera: {fileID: 0}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
