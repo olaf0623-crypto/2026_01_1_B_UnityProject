@@ -133,7 +133,7 @@ GameObject:
   - component: {fileID: 81941367}
   - component: {fileID: 81941366}
   m_Layer: 0
-  m_Name: Capsule
+  m_Name: npc 1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -631,7 +631,7 @@ GameObject:
   - component: {fileID: 661092880}
   - component: {fileID: 661092879}
   m_Layer: 0
-  m_Name: Capsule (1)
+  m_Name: npc 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
